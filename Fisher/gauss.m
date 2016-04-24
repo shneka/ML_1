@@ -1,0 +1,10 @@
+function value = gauss(x,mu,sigma)
+D = length(x);
+const = sqrt((2*pi)^(D));
+deter = sqrt(det(sigma));
+den = 1/(const*deter);
+y_1 = (x-mu);
+y_2 = inv(sigma);
+y_3 = transpose(x-mu);
+y = exp(-(y_1*y_2*y_3)/2);
+value = den*y;
